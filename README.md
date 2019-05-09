@@ -13,6 +13,8 @@ It makes it possible to have them get used to AHV, a controlled environment, and
 	- Provide Gateway
 	- Provide IPAM needed parameters
 3. Create a VM and use earlier created storage and network
+	- Upload ISO images
+	- Upload disk images
 4. Perform an upgrade of the cluster
 	- NCC
 	- AOS
