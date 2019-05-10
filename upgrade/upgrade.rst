@@ -67,7 +67,7 @@ AOS Pre-upgrade
 The AOS (Acropolis Operating System) is Nutanix' CVM (Controller Virtual Machine) system. This AOS will be updated once every while due to a few reasons:
 
 - New features
-- Bugfixes
+- Bug-fixes
 - Support for new hardware
 
 As we have just updated the NCC, updating the AOS is something that is roughly the same from a process steps point of view.
@@ -82,7 +82,7 @@ The steps are:
 4. Click the **Download** button to start the download of the AOS update. And click on the **Yes** button in the *warning* screen.
 
   .. note::
-    As our cluster is connected to the internet, it can download the AOS files it self. It the cluster is not connected to the internet, due to security reasons as an example, we can use the "darksite" method to upload the file.
+    As our cluster is connected to the internet, it can download the AOS files it self. It the cluster is not connected to the internet, due to security reasons as an example, we can use the "dark-site" method to upload the file.
     `This article <https://portal.nutanix.com/#/page/docs/details?targetId=Web-Console-Guide-Prism-v51:wc-cluster-nos-upgrade-intro-wc-r.html>`_ describes the process of that.
 
 5. After the download has finished, click the **Upgrade** button and select **Pre-upgrade**. This process will just run checks against the cluster. Click the **Yes** button to start the process.
@@ -105,7 +105,7 @@ AHV Pre-upgrade
 The AHV (Acropolis Hyper Visor) is Nutanix' Hypervisor. It will be updated once every while due to a few reasons:
 
 - New features which are needed to make some AOS features work. Think about Flow, Buckets and Calm as examples.
-- Bugfixes
+- Bug-fixes
 - Support for new hardware
 
 As we have just updated the AOS, updating the AHV is something that is roughly the same from a process steps point of view.
@@ -120,7 +120,7 @@ The steps are:
 4. Click the **Download** button to start the download of the AHV update, if not already done. And click on the **Yes** button in the *warning* screen.
 
   .. note::
-    As our cluster is connected to the internet, it can download the AOS files it self. It the cluster is not connected to the internet, due to security reasons as an example, we can use the "darksite" method to upload the file.
+    As our cluster is connected to the internet, it can download the AOS files it self. It the cluster is not connected to the internet, due to security reasons as an example, we can use the "dark-site" method to upload the file.
     `This article <https://portal.nutanix.com/#/page/docs/details?targetId=Web-Console-Guide-Prism-v51:wc-cluster-nos-upgrade-intro-wc-r.html>`_ describes the process of that.
 
 5. After the download has finished, click the **Upgrade** button and select **Pre-upgrade**. This process will just run checks against the cluster. Click the **Yes** button to start the process.

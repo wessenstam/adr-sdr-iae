@@ -43,7 +43,7 @@ The expansion of a cluster is a relatively easy process. Follow the below steps 
 
 .. figure:: images/expansion-04.png
 
-#. Select the node by clicking on or the block (mentions the *type* of the system and the *serialnumber* of the block, like in the below screenshot) or the node (*D*).
+#. Select the node by clicking on or the block (mentions the *type* of the system and the *serial number* of the block, like in the below screenshot) or the node (*D*).
 
 #. As the node has already been configured during the foundation process, the IP addresses have already been filled. 
 
@@ -53,7 +53,7 @@ The expansion of a cluster is a relatively easy process. Follow the below steps 
 
 .. figure:: images/expansion-05.png
 
-#. The next screen is showing if a system needs to be reimaged. This can be the case in the following cases:
+#. The next screen is showing if a system needs to be re-imaged. This can be the case in the following cases:
 
 	1. The AOS on the node is different then what is running in the cluster.
 	2. The Hypervisor is the wrong version or hypervisor in general. Example could be an ESXi in an AHV cluster.
@@ -73,10 +73,10 @@ The expansion of a cluster is a relatively easy process. Follow the below steps 
 Takeaways
 +++++++++
 
-What are the key things you should know about **Nutanix Cluster epansion**?
+What are the key things you should know about **Nutanix Cluster expansion**?
 
 - The cluster is capable of discovering new unconfigured nodes automatically
 
 - The expansion is done in  a few clicks
 
-- The expansion process is capable of reimaging the new node(s) to the correct configuration (AOS and Hypervisor) when needed. This doesn't need any human intervention.
+- The expansion process is capable of re-imaging the new node(s) to the correct configuration (AOS and Hypervisor) when needed. This doesn't need any human intervention.
