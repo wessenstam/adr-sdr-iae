@@ -17,16 +17,15 @@ Prism Element
 
 The Prism service provides the web UI for managing Nutanix clusters and runs on every Controller VM (CVM). This local Prism service, referred to Prism Element, can be accessed via the IP of any individual CVM, or via the virtual IP for the cluster, which will redirect to the current Prism leader.
 
-#. Open \https://<*NUTANIX-CLUSTER-IP*>:9440 in a new browser tab. (Use the :ref:`cluster_assignment` for your *IP address*)
+#. Log in to https://demo.nutanix.com and click on the AHV cluster you see.
 
-#. Log in using the following credentials:
+  .. figure:: images/demo.nutanix.com.png
 
-   - **Username** - admin
-   - **Password** - *HPOC Password*
+#. You should see roughly the following screen
 
    .. figure:: images/nutanix_tech_overview_01.png
 
-#. After you log in to Prism Element, familiarize yourself with the Prism UI. Explore the information on the **Home** screen, as well as the other screens.
+#. Familiarize yourself with the Prism UI. Explore the information on the **Home** screen, as well as the other screens.
 
 #. Review the Home screen, and identify the following items:
 
@@ -56,27 +55,6 @@ The Prism service provides the web UI for managing Nutanix clusters and runs on 
 
    .. figure:: images/nutanix_tech_overview_04.png
 
-#. Review the other sections, and do a quick walk through:
-
-   - VM
-   - Health
-   - Network
-   - Data Protection
-   - Storage
-   - Alerts
-   - Etc.
-
-#. Review other sections of the Prism UI
-
-   - Health :fa:`heartbeat`
-   - Alarms :fa:`bell`
-   - Tasks :fa:`circle-o`
-   - Search :fa:`search`
-   - Help :fa:`question`
-   - Configuration :fa:`cog`
-   - User
-
-   .. figure:: images/nutanix_tech_overview_05.png
 
    .. note::
 
@@ -108,25 +86,6 @@ What page would show you the latest activity in the system? On this page, you ca
 .. figure:: images/nutanix_tech_overview_09.png
 
 From the View Options menu, select **Tasks**, or click the circle :fa:`circle-o` icon in the toolbar, to the right of the bell icon :fa:`bell`.
-
-Distributed Storage Fabric
---------------------------
-
-The Nutanix Distributed Storage Fabric (DSF) appears to the hypervisor like any centralized storage array, but uses the CVMs and local storage in each node to provide shared storage for the cluster - the combination of compute and distributed local storage is what is now commonly referred to as **Hyperconverged Infrastructure (HCI)**.
-
-.. figure:: images/dsf_overview.png
-
-As a pioneer in the HCI space, Nutanix DSF is a mature solution capable of delivering the performance and resiliency needed to support `many different workloads <https://www.nutanix.com/solutions/>`_, including enterprise databases, virtual desktops, ROBO, Big Data, and more.
-
-The two main storage constructs within the DSF are the **Storage Pool** and **Storage Containers**.
-
-The **Storage Pool** is the aggregation of all of the physical disks within a given Nutanix cluster. The cluster manages distribution of data, so configuration of additional storage pools (like LUNs in a traditional storage environment) is **not** required. As new nodes are added to a cluster, disks are automatically added to the pool and the cluster will begin `re-distributing data to the new disks <https://nutanixbible.com/#anchor-book-of-acropolis-disk-balancing>`_ as a background task.
-
-**Storage Containers** are software-defined, logical constructs that allow you to configure storage policy for groups of VMs or vDisks. In the next exercise, you will walk through the process for creating and configuring Nutanix storage within Prism.
-
-.. note::
-
-   To learn more about additional DSF constructs such as vDisks, extents, and extent groups, refer to `this section <https://nutanixbible.com/#anchor-book-of-acropolis-distributed-storage-fabric>`_ of the Nutanix Bible.
 
 Configuring Storage Containers
 ..............................
@@ -251,7 +210,7 @@ Connect to Prism Element and create a network for user VM interfaces. Use any VL
 Setup User VM Network with IPAM
 ...............................
 
-Create another network, but this time enable IPAM.
+Create another network, but this time enable IPAM (IP Address Management).
 
 #. Fill out the following fields and click **Save**:
 
