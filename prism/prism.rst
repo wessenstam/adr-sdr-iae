@@ -138,38 +138,6 @@ Configuring Storage Containers
 
       Interested in determining how much logical storage Nutanix can provide in different RF2 or RF3 configurations? Check out the `Nutanix Storage Calculator <https://services.nutanix.com/#/storage-capacity-calculator>`_.
 
-Replication Factor (RF)
-.......................
-
-The Distributed Storage Fabric uses a Replication Factor (RF) approach to data protection, rather than legacy RAID techniques. By default, writes to Nutanix storage create two copies of the data with the ability to sustain a single node failure - this is called **RF2**. For very large clusters, or critical workloads, Nutanix can write three copies of the data with the ability to sustain two node failures - this is called **RF3**.
-
-Interested in learning about how RF writes and reads work? Check out the video below!
-
-.. raw:: html
-
-   <iframe width="640" height="360" src="https://www.youtube.com/embed/OWhdo81yTpk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-RF policies are applied on a per storage container basis within Prism Element.
-
-Nutanix clusters can also enforce `availability domain policies <https://nutanixbible.com/#anchor-book-of-acropolis-availability-domains>`_ at the Block or Rack level.
-
-Block Awareness, in a sufficiently large cluster, ensures that secondary copies of data are not written to a node within the same physical enclosure as the primary copy. This allows for the loss of a multi-node block without experiencing data unavailability. The same concept can be applied using a Nutanix cluster spanning multiple racks.
-
-The basic requirement for rack/block fault tolerance is to have minimum 3 blocks in the cluster (for RF2) as we need to store 3 copies of metadata. Starting in AOS 5.8, rack and block awareness can be supported with erasure coding enabled.
-
-#. From the View Options menu, click **Home**, and click **OK** in the **Data Resiliency Status** box.
-
-.. figure:: images/storage_config_03.png
-
-   Data Resiliency Status indicates how many failures can be tolerated without impacting the cluster. Each service listed has a specific function in the cluster. For example, Zookeeper nodes maintain configuration data (service states, IPs, host information, etc.) for the cluster.
-
-#. The RF of a cluster in Prism Element can be configured by clicking **Redundancy State** in the :fa:`cog` menu.
-
-   .. note::
-
-     For this exercise, please leave the redundancy factor configured as 2.
-
-   An RF2 cluster can be upgraded in place to support RF3 (with a minimum of 5 nodes). If a cluster is configured for RF3, 5 copies of metadata will be created for all data, regardless of whether or not the individual storage containers are configured as RF2 or RF3.
 
 Configuring Virtual Networks
 ----------------------------
@@ -257,9 +225,11 @@ In this exercise you will create a CentOS VM from an existing, pre-installed dis
    - Select **+ Add New Disk**
       - **Type** - DISK
       - **Operation** - Clone from Image Service
-      - **Image** - CentOS7.qcow2
+      - **Image** - CentOS 7
       - Select **Add**
       *This will create a thin clone of the existing CentOS disk image*
+
+      .. figure:: images/centos7.png
 
    - Select **Add New NIC**
       - **VLAN Name** - Primary
