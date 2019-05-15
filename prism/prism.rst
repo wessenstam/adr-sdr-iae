@@ -21,10 +21,6 @@ The Prism service provides the web UI for managing Nutanix clusters and runs on 
 
   .. figure:: images/demo.nutanix.com.png
 
-#. You should see roughly the following screen
-
-   .. figure:: images/nutanix_tech_overview_01.png
-
 #. Familiarize yourself with the Prism UI. Explore the information on the **Home** screen, as well as the other screens.
 
 #. Review the Home screen, and identify the following items:
@@ -109,18 +105,6 @@ Configuring Storage Containers
    .. figure:: images/storage_config_01.png
 
    The storage container will now be available across all nodes within the cluster.
-
-   In AHV, the hypervisor creates a separate iSCSI connection to the DSF for each vDisk in use. In ESXi environments, each **Storage Container** is automatically mounted to the hypervisor as an NFS datastore. Similarly, in Hyper-V, each **Storage Container** is presented as an SMB datastore.
-
-   .. note::
-
-     Example view of **Storage Containers** from Prism:
-
-     .. figure:: images/nutanix_tech_overview_13.png
-
-     Example view of **Storage Containers** (datastores) from vCenter:
-
-     .. figure:: images/nutanix_tech_overview_14.png
 
    You can create multiple containers with different policies, all sharing capacity from the **Storage Pool**.
 
@@ -232,7 +216,7 @@ In this exercise you will create a CentOS VM from an existing, pre-installed dis
       .. figure:: images/centos7.png
 
    - Select **Add New NIC**
-      - **VLAN Name** - Primary
+      - **VLAN Name** - *Initials*-Network_IPAM
       - Select **Add**
 
    .. figure:: images/deploy_workloads_03.png
@@ -261,14 +245,6 @@ Explore VM power actions and console access.
 
    .. figure:: images/manage_workloads_01.png
 
-   .. note::
-
-     In ESX:
-
-     - The steps in this exercise could also be done from Prism while using an ESXi cluster that has its VMware vCenter instance registered to Prism.
-
-     .. figure:: images/manage_workloads_06.png
-
 Takeaways
 ---------
 
@@ -278,10 +254,6 @@ What are the key things you should know about **Nutanix AOS, Prism, and AHV**?
 
 - Prism Element is thoughtfully laid out, bringing critical information front and center for administrators.
 
-- The Distributed Storage Fabric provides RF2 or RF3 shared storage to the cluster.
-
-- VM-level snapshot and replication policies can be managed through Prism for any supported hypervisor.
-
 - Storage Containers allow you to define storage policy for VMs, including RF level, compression, deduplication, and erasure coding.
 
 - AHV provides native distributed virtual switching and IP address management, simplifying virtual network management.
@@ -289,7 +261,5 @@ What are the key things you should know about **Nutanix AOS, Prism, and AHV**?
 - AHV VMs can be managed via Prism, CLI, or REST API.
 
 - The AHV Image Service allows you to provide a catalog of available images to be used in VM deployments.
-
-- AHV provides critical features such as live migration, high availability, and dynamic VM placement out-of-the-box without additional configuration.
 
 - Check out `The Nutanix Bible <https://nutanixbible.com>`_ for more information about core Nutanix architecture.
